@@ -13,8 +13,6 @@ const userSchema = new mongoose.Schema({
     },
     last_name: { 
         type: String, 
-        default: null,
-        
     },
     email: { 
         type: String, 
@@ -24,6 +22,18 @@ const userSchema = new mongoose.Schema({
     password: { 
         type: String ,
         required: true
+    },
+    dob: { 
+        type: Date ,
+        required: true
+    },
+    role: { 
+        type: String ,
+        required: true,
+        enum: {
+            values: ['admin', 'buyer', "seller"],
+        }
+
     },
     token: { 
         type: String 
