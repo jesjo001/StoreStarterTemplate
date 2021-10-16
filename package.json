@@ -21,6 +21,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.8",
     "nanoid": "^3.1.28",
+    "nodemailer": "^6.6.5",
     "rate-limiter-flexible": "^2.3.0"
   },
   "devDependencies": {
