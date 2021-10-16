@@ -5,13 +5,11 @@ const cartSchema = new Schema({
     productName: {
         type: String,
         required: true,
-        trim: true,
         minlength: 5
     },
     price: {
         type: String,
         required: true,
-        trim: true,
     },
     productImage: {
         type: String,
@@ -30,9 +28,19 @@ const cartSchema = new Schema({
         type: String,
         required: true,
     },
-    userId: {
+    status: {
         type: String,
-        required: true,
+        required: false,
+        enum: [ "pending", "complete", "failed", "cancelled"]
+    },
+    paymentReference: {
+        type: String,
+        required: false,
+    },
+    shippingStatus: {
+        type: String,
+        required: false,
+        enum: [ "pending", "delivered", "failed", "shipped"]
     }
 },{
     timestamps: true,
